@@ -14,8 +14,8 @@ Daanii Nabil Ghinannafsi Kusnanta | 05111940000163 |
 * [Topologi](#topologi)
 * [VLSM](#vlsm)
   * [Subnetting](#vlsm-subnetting)
-<!--   * [Praktik pada CPT](#vlsm-cpt) -->
   * [Praktik pada GNS3](#vlsm-gns3)
+<!--   * [Praktik pada CPT](#vlsm-cpt) -->
 * [CIDR](#cidr)
   * [Subnetting](#cidr-subnetting)
   * [Praktik pada CPT](#cidr-cpt)
