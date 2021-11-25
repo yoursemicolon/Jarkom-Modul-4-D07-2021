@@ -20,6 +20,8 @@ Daanii Nabil Ghinannafsi Kusnanta | 05111940000163 |
   * [Subnetting](#cidr-subnetting)
   * [Praktik pada CPT](#cidr-cpt)
 <!--   * [Praktik pada GNS3](#cidr-gns3) -->
+* [Kendala](#kendala)
+* [Referensi](#referensi)
 
 ## <a name="topologi"></a> Topologi
 <!-- gambar topologi -->
