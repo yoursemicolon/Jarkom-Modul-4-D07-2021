@@ -432,8 +432,90 @@ Apabila dilihat menggunakan command `route -n`:
 - ping dari JABRA ke JIPANGU
 
   <image src="img/testing9.PNG" width="700">
-  
+
 ## <a name="cidr"></a> CIDR
 ### <a name="cidr-subnetting"></a> Subnetting
+
+1. Melakukan subnetting pada topologi yang diberikan sehingga terbentuk 13 subnet seperti pada gambar, dan kemudian dikelompokkan sesuai dengan jarak terdekatnya. 
+<image src="img/1.png" width="700">
+<image src="img/2.png" width="700">
+<image src="img/3.png" width="700">
+<image src="img/4.png" width="700">
+<image src="img/5.png" width="700">
+<image src="img/6.png" width="700">
+<image src="img/7.png" width="700">
+<image src="img/8.png" width="700">
+
+2. Membentuk pohon sesuai dengan gambar untuk melakukan pembagian IP. 
+<image src="img/cidr.png" width="700">
+
+3. Subnet besar yang dibentuk memiliki NID <......> dengan netmask /16. Perhitungan pembagian IP berdasarkan NID dan netmask menggunakan pohon sebagai berikut
+<image src="img/nid-cidr.PNG" width="700">
+
 ### <a name="cidr-cpt"></a> Praktik pada CPT
 <!-- ### <a name="cidr-gns3"></a> Praktik pada GNS3 -->
+#### Topologi
+Sebelum melakukan konfigurasi, terlebih dahulu dibuat topologi pada CPT. 
+<image src="img/topologi-cidr.png" width="700">
+
+Setelah itu melakukan konfigurasi IP pada setiap router dan client sesuai dengan pembagian IP. 
+
+#### Routing
+##### Foosha
+```bash
+192.195.160.0/22 via 192.195.192.2
+192.195.136.0/25 via 192.195.192.2
+192.195.128.0/21 via 192.195.192.2
+192.195.128.0/21 via 192.195.192.2
+192.195.20.0/22 via 192.195.32.2
+192.195.16.0/23 via 192.195.32.2
+192.195.18.0/28 via 192.195.32.2
+192.195.4.0/24 via 192.195.32.2
+192.195.144.0/30 via 192.195.192.2
+```
+##### Water7
+```bash
+0.0.0.0/0 via 192.195.192.1
+192.195.136.0/25 via 192.195.144.2
+192.195.128.0/21 via 192.195.144.2
+```
+
+##### Pucci
+```bash
+0.0.0.0/0 via 192.195.144.1
+```
+
+##### Guanhao
+```bash
+0.0.0.0/0 via 192.195.32.1
+192.195.18.0/28 via 192.195.16.3
+192.195.4.0/24 via 192.195.8.2
+192.195.0.0/22 via 192.195.8.2
+```
+##### Alabasta
+```bash
+0.0.0.0/0 via 192.195.16.1
+```
+
+##### Oimo
+```bash
+0.0.0.0/0 via 192.195.8.1
+192.195.0.0/22 via 192.195.4.3
+```
+##### Seastone
+```bash
+0.0.0.0/0 via 192.195.4.1
+```
+
+
+#### Testing
+- ping dari OIMO ke COURTYARD 
+- ping dari OIMO ke PUCCI
+- ping dari JORGE ke ELENA
+
+<image src="img/testing10.PNG" width="700">
+
+
+## <a name="kendala"></a> Kendala
+- Terdapat kendala dalam menghitung pembagian IP pada pohon (server dimasukkan/tidak)
+- Konfigurasi routing pada GNS sempat bingung dikarenakan muncul error. Saat konfigurasi IP harus teliti dan tidak boleh ada typo, dan perhitungan harus benar. Sehingga saat konfigurasi routing routing mau dijalankan. 
