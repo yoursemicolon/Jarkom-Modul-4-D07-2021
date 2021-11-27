@@ -53,7 +53,7 @@ A12 | 721 | /22 |
 A13 | 252 | /24 |
 Total | 5841 | /19 |
 
-3. Subnet besar yang dibentuk memiliki NID <......> dengan netmask /19. Perhitungan pembagian IP berdasarkan NID dan netmask menggunakan pohon sebagai berikut
+3. Subnet besar yang dibentuk memiliki NID 192.168.0.0 dengan netmask /19. Perhitungan pembagian IP berdasarkan NID dan netmask menggunakan pohon sebagai berikut
 <image src="img/vlsm.png" width="700">
 <image src="img/nid-vlsm.PNG" width="700">
 
